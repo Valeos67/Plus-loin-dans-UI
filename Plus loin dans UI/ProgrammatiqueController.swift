@@ -14,6 +14,7 @@ class ProgrammatiqueController: UIViewController {
     var monPremierUiview: UIView?
     var monPremierLabel: UILabel?
     var monPremierBouton: UIButton?
+    var maPremiereIV: UIImageView?
     
     
     
@@ -47,7 +48,23 @@ class ProgrammatiqueController: UIViewController {
         
         monPremierBouton?.addTarget(self, action: #selector(boutonAppuye), for: .touchUpInside)
         
-    }
+        let largeur = view.frame.width - 60
+        let rectIV = CGRect(x: 30, y: view.frame.height / 2 - (largeur / 2), width: largeur, height: largeur)
+        
+        maPremiereIV = UIImageView(frame: rectIV)
+        maPremiereIV?.image = UIImage(named: "codabee")
+        maPremiereIV?.contentMode = .scaleAspectFill
+        maPremiereIV?.clipsToBounds = true
+        maPremiereIV?.layer.cornerRadius = maPremiereIV!.frame.width / 2
+        view.addSubview(maPremiereIV!)
+        
+        maPremiereIV?.isUserInteractionEnabled = true
+        maPremiereIV?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageAppuye)))
+  }
+        @objc func imageAppuye() {
+            print("Image touchée")
+        }
+   
     
     @objc func boutonAppuye() {
         
