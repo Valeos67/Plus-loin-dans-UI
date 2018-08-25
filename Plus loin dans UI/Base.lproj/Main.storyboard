@@ -17,10 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="VHq-k4-eQR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-i8-2tc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.32340318188676409" green="0.40571434674154216" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nCQ-uv-1bu" firstAttribute="trailing" secondItem="VaH-i8-2tc" secondAttribute="trailing" id="Iwd-9B-JCB"/>
+                            <constraint firstItem="VaH-i8-2tc" firstAttribute="top" secondItem="nCQ-uv-1bu" secondAttribute="top" id="Tcj-I4-deR"/>
+                            <constraint firstItem="nCQ-uv-1bu" firstAttribute="bottom" secondItem="VaH-i8-2tc" secondAttribute="bottom" id="Znt-Tk-fvO"/>
+                            <constraint firstItem="VaH-i8-2tc" firstAttribute="leading" secondItem="nCQ-uv-1bu" secondAttribute="leading" id="dhx-Wn-xc3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nCQ-uv-1bu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="RRb-UP-04t"/>
+                    <connections>
+                        <outlet property="scroll" destination="VaH-i8-2tc" id="EEL-ob-eRr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lX-et-AFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
