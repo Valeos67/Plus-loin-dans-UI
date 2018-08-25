@@ -12,6 +12,7 @@ class ProgrammatiqueController: UIViewController {
 
     
     var monPremierUiview: UIView?
+    var monPremierLabel: UILabel?
     
     
     override func viewDidLoad() {
@@ -20,22 +21,16 @@ class ProgrammatiqueController: UIViewController {
         monPremierUiview = UIView(frame: CGRect(x: 30, y: 60, width: 200, height: 50))
         monPremierUiview?.backgroundColor = UIColor(red: 30 / 255, green: 123 / 255, blue: 90 / 255, alpha: 1)
         monPremierUiview?.layer.cornerRadius = 25
+        guard monPremierUiview != nil else { return }
         view.addSubview(monPremierUiview!)
-        print(monPremierUiview?.frame)
-        print(monPremierUiview?.bounds)
-        
-        let secondeVue = UIView(frame: monPremierUiview!.frame)
-        secondeVue.center.y += 100
-        secondeVue.backgroundColor = UIColor.red
-        
-        
-        view.addSubview(secondeVue)
-        
-       let troisiemeVue = UIView(frame: monPremierUiview!.bounds)
-        troisiemeVue.center.y += 200
-        troisiemeVue.backgroundColor = UIColor.brown
-        view.addSubview(troisiemeVue)
-        
+
+        monPremierLabel = UILabel(frame: CGRect(x: 0, y: monPremierUiview!.frame.maxY + 20, width: view.frame.width, height: 50))
+        monPremierLabel?.text = "Coucou je suis un texte"
+        monPremierLabel?.numberOfLines = 1
+        monPremierLabel?.textColor = UIColor.white
+        monPremierLabel?.font = UIFont(name: "Chalkduster", size: 20)
+        monPremierLabel?.textAlignment = NSTextAlignment.center
+        view.addSubview(monPremierLabel!)
     }
 
 }
